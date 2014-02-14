@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.example"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+        <icon src="icon.png" />
+        <gap:splash src="splash.png" />
+
+        <gap:platform name="ios" />
+        <gap:platform name="android" />
+        <preference name="fullscreen" value="true" />
+        <preference name="ios-statusbarstyle" value="black-opaque" />
+        <preference name="detect-data-types" value="true" />
+
+    <access origin="http://www.imono.nl" subdomains="true" />
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Imono</name>
+
+    <description>
+        Asian Bar and Restaurant Imono Groningen
+    </description>
+
+    <author href="http://www.habibi.nl" email="info@habibi.nl">
+        Habibi.nl 
+    </author>
+
+</widget>
