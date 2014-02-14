@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Imono Groningen</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.1.css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.4.1.min.js"></script>
+<!-- custom -->
+<link rel="stylesheet" href="css/custom.css" />
+<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+	
+		<h1>Imono</h1>
+	
+	</div>
+
+	<div role="main" class="ui-content">
+
+		<center><img src="http://www.imono.nl/img/logo.png" alt="Imono" /></center>
+
+		<br/>
+
+		<ul data-role="listview" data-inset="true"  data-count-theme="b">
+			<li data-icon="star"><a href="nieuws.html">Nieuws</a></li>
+			<!--<li data-icon="shop"><a href="#postcodecheck" data-rel="popup" data-position-to="window" data-transition="pop">Bestellen</a></li>-->
+			<li data-icon="shop"><a href="http://bestellen.imono.nl?mobiel=ja">Bestellen</a></li>
+			<li data-icon="info"><a href="bezorging.html">Bezorginfo</a></li>
+			<li data-icon="bullets"><a href="menukaart.html">Menukaart</a></li>
+			<li data-icon="phone"><a href="contact.html">Contact</a></li>
+		</ul>
+
+	</div>
+
+
+	<!-- postcode check -->
+
+	<div data-role="popup" id="postcodecheck" class="ui-corner-all">
+	    <form>
+	        <div style="padding:20px 40px;">
+	            <h3>Uw postcode</h3>
+	            <p>Bezorgen we in uw wijk? Vul de vier cijfers van uw postcode in:</p>
+	            <label for="postcode" class="ui-hidden-accessible">Text Input:</label>
+	            <input name="postcode" id="postcode" value="" placeholder="Postcode" type="number" class="mijnpc">
+	            <button type="submit" class="bestellen">Bestellen!</button>
+	        </div>
+	    </form>
+	</div>
+
+	<!-- einde postcode check -->
+
+</div>
+
+<script>
+
+$( document ).bind( "mobileinit", function() {
+    $.mobile.allowCrossDomainPages = true;
+    $.support.cors = true;
+});
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+
+	$('.bestellen').click(function() {
+
+		var pc = $('.mijnpc').val();
+
+		var url = 'http://www.pizzico.nl?mobiel=ja&postcode=' + pc;
+
+		window.location = url;
+
+	});
+
+});
+
+</script>
+
+</body>
+</html>
